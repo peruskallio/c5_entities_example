@@ -61,7 +61,7 @@ class Controller extends Package
 
     protected function installData($pkg)
     {
-        $em = Database::getActiveConnection()->getEntityManager();
+        $em = $pkg->getEntityManager();
         $faker = \Faker\Factory::create();
 
         // Create a couple of authors
@@ -107,3 +107,4 @@ class Controller extends Package
     }
 
 }
+

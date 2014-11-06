@@ -1,16 +1,17 @@
 # Example of using Doctrine entities within a concrete5 package
 
 Since version 5.7.0 concrete5 has shipped with the Doctrine DBAL and ORM
-libraries. This makes it possible to use Doctrine entities within packages
-which makes a lot of things easier in terms of accessing the entities stored
-in the database.
+libraries. This makes it possible to use Doctrine entities within concrete5
+packages which makes a lot of things easier in terms of accessing the entities
+stored in the database.
 
 However, currently concrete5 (5.7.2) does not provide any utilities or
 guidelines on how to use these entities within the package context. Therefore,
 it is required to add some functionality to the package class to make all this
 possible and easier to manage.
 
-The required functionality is provided by the following composer package:
+The required functionality is provided by the following 
+[Composer](https://getcomposer.org/) package:
 
 https://github.com/mainio/c5pkg_dbentities
 

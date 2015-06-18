@@ -10,6 +10,10 @@ guidelines on how to use these entities within the package context. Therefore,
 it is required to add some functionality to the package class to make all this
 possible and easier to manage.
 
+This was changed in 5.7.4 and concrete5 now ships with most of the
+functionality provided by the extra package. Please see the master branch for
+an up-to-date version of this add-on example.
+
 The required functionality is provided by the following 
 [Composer](https://getcomposer.org/) package:
 

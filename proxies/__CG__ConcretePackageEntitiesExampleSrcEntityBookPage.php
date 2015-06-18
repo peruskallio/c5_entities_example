@@ -203,4 +203,26 @@ class Page extends \Concrete\Package\EntitiesExample\Src\Entity\Book\Page implem
         return parent::getWordCount();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function get($name)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'get', array($name));
+
+        return parent::get($name);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function set($name, $value)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'set', array($name, $value));
+
+        return parent::set($name, $value);
+    }
+
 }

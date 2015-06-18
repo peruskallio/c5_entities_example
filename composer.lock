@@ -60,7 +60,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mainio/c5pkg_dbentities.git",
-                "reference": "d9bf0ccc6d9ab6b46da67d1ce53481c9e6ef4763"
+                "reference": "5b91f811b32bdfee5cb67253dca2d715b2b639da"
             },
             "require": {
                 "php": ">=5.3.0"
@@ -93,7 +93,7 @@
                 "database",
                 "entity"
             ],
-            "time": "2014-11-05 12:48:06"
+            "time": "2014-11-13 18:00:25"
         }
     ],
     "packages-dev": [],

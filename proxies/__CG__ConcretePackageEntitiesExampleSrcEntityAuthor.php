@@ -214,4 +214,26 @@ class Author extends \Concrete\Package\EntitiesExample\Src\Entity\Author impleme
         return parent::getNumberOfBooks();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function get($name)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'get', array($name));
+
+        return parent::get($name);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function set($name, $value)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'set', array($name, $value));
+
+        return parent::set($name, $value);
+    }
+
 }

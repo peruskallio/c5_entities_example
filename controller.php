@@ -19,9 +19,9 @@ defined('C5_EXECUTE') or die(_("Access Denied."));
 // Hopefully we'll have some way of handling this in concrete5 as well at some point...
 include(__DIR__ . '/vendor/autoload.php');
 
-use \Mainio\C5\Entity\Package;
 use Database;
 use SinglePage;
+use Package;
 
 class Controller extends Package
 {

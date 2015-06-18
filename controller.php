@@ -22,6 +22,7 @@ include(__DIR__ . '/vendor/autoload.php');
 use Database;
 use SinglePage;
 use Package;
+use Concrete\Core\Foundation\ClassLoader;
 
 class Controller extends Package
 {
@@ -42,9 +43,15 @@ class Controller extends Package
 
     public function install()
     {
+        // We need to register the autoloaders for the DB uninstallation to
+        // work properly. This would not otherwise be done in the install
+        // function. 
+        ClassLoader::getInstance()->registerPackage($this->pkgHandle);
+
         // We only call this because we want a fresh database when we import
         // the example data there. Do not normally call this!
-        $this->uninstallDatabase();
+        $dbm = $this->getDatabaseStructureManager();
+        $dbm->uninstallDatabase();
 
         $pkg = parent::install();
 

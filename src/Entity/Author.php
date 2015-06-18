@@ -1,9 +1,10 @@
 <?php
 namespace Concrete\Package\EntitiesExample\Src\Entity;
 
+
 defined('C5_EXECUTE') or die(_("Access Denied."));
 
-use Mainio\C5\Entity\Entity;
+use Concrete\Package\EntitiesExample\Src\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**

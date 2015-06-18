@@ -1,16 +1,9 @@
 {
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/mainio/c5pkg_dbentities.git"
-        }
-    ],
     "config": {
         "optimize-autoloader": true
     },
     "require": {
         "php": ">=5.3.3",
-        "mainio/c5-dbentities": "dev-master",
         "fzaninotto/faker": "1.4.0"
     }
 }

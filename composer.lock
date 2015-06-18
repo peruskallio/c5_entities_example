@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a8475821ceff751494337e2376101a36",
+    "hash": "38a8c359f517da7954be7c10b890b464",
     "packages": [
         {
             "name": "fzaninotto/faker",
@@ -53,56 +53,14 @@
                 "fixtures"
             ],
             "time": "2014-06-04 14:43:02"
-        },
-        {
-            "name": "mainio/c5-dbentities",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mainio/c5pkg_dbentities.git",
-                "reference": "d9bf0ccc6d9ab6b46da67d1ce53481c9e6ef4763"
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Mainio\\C5\\Entity\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Antti Hukkanen",
-                    "email": "antti.hukkanen@mainiotech.fi",
-                    "homepage": "http://www.mainiotech.fi"
-                }
-            ],
-            "description": "Gives some basic DB entity utilities for concrete5 packages.",
-            "homepage": "http://www.mainiotech.fi",
-            "keywords": [
-                "concrete5",
-                "database",
-                "entity"
-            ],
-            "time": "2014-11-05 12:48:06"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "mainio/c5-dbentities": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": {
         "php": ">=5.3.3"
     },

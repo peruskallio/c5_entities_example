@@ -5,15 +5,9 @@ libraries. This makes it possible to use Doctrine entities within concrete5
 packages which makes a lot of things easier in terms of accessing the entities
 stored in the database.
 
-However, currently concrete5 (5.7.2) does not provide any utilities or
-guidelines on how to use these entities within the package context. Therefore,
-it is required to add some functionality to the package class to make all this
-possible and easier to manage.
-
-The required functionality is provided by the following 
-[Composer](https://getcomposer.org/) package:
-
-https://github.com/mainio/c5pkg_dbentities
+In 5.7.4 our implementation of the utilities that are necessary to take
+advantage of the Doctrine entities within a package context was merged into
+the core.
 
 This is an example implementation on how to use that package and the Doctrine
 entities within a concrete5 package. 
@@ -30,20 +24,13 @@ entities within a concrete5 package.
 6. Navigate to your site's dashboard and install this package
 
 When doing any further development on the package or modifying the Entity
-classes (located in `src/Entity`), make sure you add this configuration to your
-`/config/app.php`:
+classes (located in `src/Entity`), make sure you have the Doctrine
+development mode enabled. You can enable this from:
+Dashboard > System & Settings > Environment > Database Entities > Doctrine Development Mode
 
-```php
-return array(
-    // ...
-    'package_dev_mode' => true,
-    // ...
-);
-```
-
-This enables the auto generation of the proxy classes to your package folder.
-The auto generation is run always when the pacakge is installed or upgraded
-and that setting is enabled.
+This enables the auto generation of the proxy classes to your system's
+application/config folder. The auto generation is run always when the pacakge
+is installed or upgraded and that setting is enabled.
 
 
 ## License

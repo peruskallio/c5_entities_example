@@ -3,22 +3,6 @@ namespace Concrete\Package\EntitiesExample;
 
 defined('C5_EXECUTE') or die(_("Access Denied."));
 
-// Autoload needs to happen already here as we need the included libraries
-// already in the package's extend statement. Too bad if we need different
-// versions of the same library in multiple packages, the one that is loaded
-// the first will always win. That's a widely acknowledged problem and there
-// are some possible ways to solve it:
-
-// Maybe some day built into composer:
-// https://github.com/composer/composer/issues/183
-
-// Drupal's way:
-// https://www.drupal.org/project/composer_manager
-// https://www.acquia.com/blog/using-composer-manager-get-island-now
-
-// Hopefully we'll have some way of handling this in concrete5 as well at some point...
-include(__DIR__ . '/vendor/autoload.php');
-
 use Database;
 use SinglePage;
 use Package;
@@ -43,9 +27,14 @@ class Controller extends Package
 
     public function install()
     {
+        $fs = new \Illuminate\Filesystem\Filesystem();
+        if (!$fs->exists(dirname(__FILE__) . '/vendor/autoload.php')) {
+            throw new \Exception(t("Composer packages have not been installed for this add-on. Please follow the installation instructions!"));
+        }
+
         // We need to register the autoloaders for the DB uninstallation to
         // work properly. This would not otherwise be done in the install
-        // function. 
+        // function.
         ClassLoader::getInstance()->registerPackage($this->pkgHandle);
 
         // We only call this because we want a fresh database when we import
@@ -54,6 +43,8 @@ class Controller extends Package
         $dbm->uninstallDatabase();
 
         $pkg = parent::install();
+
+        $this->loadDependencies();
 
         $this->installSinglePages($pkg);
         $this->installData($pkg);
@@ -111,6 +102,13 @@ class Controller extends Package
             // Flush after every book
             $em->flush();
         }
+    }
+
+    protected function loadDependencies()
+    {
+        // No other way of managing the composer dependencies currently.
+        // See: https://github.com/concrete5/concrete5-5.7.0/issues/360
+        $filesystem = new \Illuminate\Filesystem\Filesystem();
     }
 
 }

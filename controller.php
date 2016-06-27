@@ -109,7 +109,7 @@ class Controller extends Package
         // No other way of managing the composer dependencies currently.
         // See: https://github.com/concrete5/concrete5-5.7.0/issues/360
         $filesystem = new \Illuminate\Filesystem\Filesystem();
+        $filesystem->getRequire(dirname(__FILE__) . '/vendor/autoload.php');
     }
 
 }
-
